@@ -62,8 +62,9 @@ class MenuController extends Controller
 
         ]);
 
-        return redirect()->route('admin')->with('success','Product updated.');
+        return redirect()->route('admin.menus')->with('success','Product updated.');
     }
+
     public function show()
     {
         $food = Menu::where('category', 'food')->get();
@@ -75,6 +76,8 @@ class MenuController extends Controller
     {
         $data = menu::findOrFail($id);
         $data->delete();
+
+        return redirect()->route('admin.menus')->with('success','Product updated.');
         
     }
 

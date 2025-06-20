@@ -31,9 +31,10 @@ Route::middleware(['role'])->group(function() {
     Route::get('/admin/menus/create', [MenuController::class, 'createShow'])->name('admin.menus.create');
     Route::post('/admin/menus', [MenuController::class, 'store']);
     Route::get('/admin/menus/edit/{id}',[MenuController::class,'edit'])->name('admin.menus.edit');
+    route::post('/admin/menus/update/{id}',[MenuController::class,'update'])->name('admin.menus.update');
+    route::delete('/admin/menus/{id}', [MenuController::class, 'delete'])->name('admin.menus.delete');
     Route::get('/admin/reservation',[ReservationController::class,'show_admin'])->name('admin.reservation'); 
 });
-route::post('/update_menu/{id}',[MenuController::class,'update'])->name('admin.menus.update');
 
 
 // ->middleware(['role' => 'admin'])

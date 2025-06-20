@@ -62,13 +62,23 @@ class MenuController extends Controller
 
         ]);
 
-        return redirect()->route('products.index')->with('success','Product updated.');
+        return redirect()->route('admin.menus')->with('success','Product updated.');
     }
+
     public function show()
     {
         $food = Menu::where('category', 'food')->get();
         $drink = Menu::where('category', 'drink')->get();
         return view('menu', compact('food', 'drink'));
+    }
+
+    public function delete($id)
+    {
+        $data = menu::findOrFail($id);
+        $data->delete();
+
+        return redirect()->route('admin.menus')->with('success','Product updated.');
+        
     }
 
 

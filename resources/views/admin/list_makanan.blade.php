@@ -4,7 +4,7 @@
     <div class="flex flex-col gap-4">
         <h2 class="mb-2"><b>Menu List</b></h2>
         
-        <a href="{{route('admin.menus.create')}}">
+        <a href="{{route('admin.menus.create')}}" class="w-fit">
             <button class="bg-accent text-primary hover:bg-accent/80 border-4">
                 Add Menu
             </button>
@@ -45,7 +45,7 @@
                             <a href="{{ route('admin.menus.edit', $m->id)}}">
                                 <button class="border-4 py-1 hover:bg-accent/20">Edit</button>
                             </a>
-                            <form action="delete" method="POST" style="display:inline;">
+                            <form action="{{route('admin.menus.delete', $m->id)}}" method="POST" style="display:inline;">
                                 @csrf @method('DELETE')
                                 <button class="bg-destructive py-1 bg-destructive/90 border-4">Delete</button>
                             </form>

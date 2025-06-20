@@ -1,4 +1,4 @@
-@extends('layouts.GeneralLayout')
+@extends('layouts.general-layout')
 @section('content')
 
 <div class="flex flex-col gap-4">
@@ -7,7 +7,7 @@
     </div>
 
     <div class="container px-8">
-        <form action="/reservation" method="post" class="bg-accent-foreground flex flex-col gap-4 rounder-2xl border-4 p-8">
+        <form action="/reservation" method="post" class="bg-accent-foreground flex flex-col gap-4 rounded-2xl border-4 p-8">
             @csrf
 
             <h1 class="font-outline-3 text-accent">Reservation Form</h1>
@@ -24,7 +24,7 @@
                 <input type="number" id="people" name="people" min="1" max="10" class="bg-accent-foreground rounded-xl border-4 px-3 py-2 focus:outline-none">
             </div>
 
-            <button type="submit" class="bg-accent hover:bg-accent/80 rounder-xl-border-4">Reserve Now</button>
+            <button type="submit" class="bg-accent hover:bg-accent/80 rounder-xl border-4">Reserve Now</button>
         </form>
     </div>
 </div>

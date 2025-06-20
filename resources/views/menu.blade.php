@@ -1,4 +1,4 @@
-@extends('layout.GeneralLayout')
+@extends('layouts.general-layout')
 @section('content')
 
 <div class="flex h-fit w-full flex-col gap-4">
@@ -35,7 +35,6 @@
             </div>
         @endforeach
     </div>
-div
 </div>
 @endsection
 

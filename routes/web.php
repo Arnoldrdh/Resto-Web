@@ -8,10 +8,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+img-branch
 Route::get('/show', function () {
     return view('products.index');
 });
 
 Route::post('/store', [MenuController::class, 'store']);
 
-// Route::resource('menu',MenuController::class);
+

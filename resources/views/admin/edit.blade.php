@@ -3,7 +3,7 @@
 @section('content')
     <h2>Add New Menu</h2>
 
-    <form action="{{ route('post_menu'), $menu->id }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('update_menu', $menu->id)  }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label>Food Name</label>
@@ -35,6 +35,6 @@
             <img src="{{ asset($m->image) }}" width="100">
         </div> --}}
 
-        <button class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
 @endsection

@@ -22,15 +22,14 @@ Route::get('/menus', [MenuController::class, 'show'])->name('menu');
 Route::get('/reservation', [ReservationController::class, 'show'])->name('reservation');
 Route::post('/reservation', [ReservationController::class, 'create']);
 
-
 // INI PUNYA ADMIN 
-// Ini /admin itu liat list makanan
-Route::get('/admin',[MenuController::class,'index'])->name('admin');
-//post makanan
-route::get('/create_menu',[MenuController::class,'create'])->name('admin.menus.create');
-Route::post('/post_menu', [MenuController::class,'store'])->name('post_menu');
-route::get('/edit_menu/{id}',[MenuController::class,'edit'])->name('edit_menu');
-route::post('/update_menu/{id}',[MenuController::class,'update'])->name('update_menu');
+Route::middleware(['role'])->group(function() {
+    Route::get('/admin/menus', [MenuController::class, 'adminShow'])->name('admin.menus');
+    Route::get('/admin/menus/create', [MenuController::class, 'createShow'])->name('admin.menus.create');
+    Route::post('/admin/menus', [MenuController::class, 'store']);
+    route::get('/admin/menus/edit/{id}',[MenuController::class,'edit'])->name('admin.menus.edit');
+});
+route::post('/update_menu/{id}',[MenuController::class,'update'])->name('admin.menus.update');
 
 
 // ->middleware(['role' => 'admin'])

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.plain-layout')
 
 @section('content')
     <h2><b>List User</b></h2>

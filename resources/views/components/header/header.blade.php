@@ -14,11 +14,11 @@
         <button class="bg-accent border-4 py-1">Login</button>
     </a>
     @else
-    <div class="relative cursor-pointer" onclick="toggleDropdown()">
+    <div class="relative cursor-pointer" onclick="setIsSectionOpen()">
         <p>Hi, {{Auth::user()->name}}</p>
-        <div id="section" class="bg-background text-accent absolute inset-0 mt-8 hiddend h-fit w-fit flex-col gap-1 rounded-xl border-4 p-1">
+        <div id="section" class="bg-background text-accent absolute inset-0 mt-8 hiddend h-fit w-fit flex-col gap-1 rounded-xl border-4 p-1 hidden">
             @if(Auth::user()->role == 'admin')
-            <a href="{{route('reservation')">
+            <a href="{{route('reservation')}}">
                 <button class="hover:bg-accent/10 w-full text-start text-base font-normal">Dashboard</button>
             </a>
             @endif
@@ -32,8 +32,8 @@
 
 <script>
     var isSectionOpen = false;
-    function setIsMenuOpen(val) {
-        isSectionOpen = val;
+    function setIsSectionOpen() {
+        isSectionOpen = !isSectionOpen;
         document.getElementById('section').style.display = isSectionOpen ? 'flex' : 'none';
     }
 </script>

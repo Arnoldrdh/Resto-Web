@@ -13,6 +13,8 @@ Route::get('/', function () {
 // INI FUNCTION PUNYA USER
 Route::get('/login',[AuthController::class,'showLogin'] )->name('login');
 Route::post('login',[AuthController::class,'login']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
 Route::get('/home', function() {
     return view('home');
 })->name('home');

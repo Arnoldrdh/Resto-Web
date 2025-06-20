@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-img-branch
+
 Route::get('/show', function () {
     return view('products.index');
 });

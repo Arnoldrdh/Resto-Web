@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
@@ -21,7 +22,7 @@ class ReservationController extends Controller
         $reservation-> name = $req->name;
         $reservation-> datetime = $req->datetime;
         $reservation-> people = $req->people;
-        $reservation-> user_id = $req->Auth::user()->id;
+        $reservation-> user_id = Auth::user()->id;
         $reservation->save();
         return redirect('/reservation');
     }

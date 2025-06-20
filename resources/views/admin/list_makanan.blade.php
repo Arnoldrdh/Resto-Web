@@ -32,7 +32,7 @@
                 @endif
                 @foreach ($menus as $m)
                     <tr>
-                        <td class="p-2"><img src="{{ asset('images/'.'1750392208.jpg') }}" width="100"></td>
+                        <td class="p-2"><img src="{{ asset($m->image) }}" width="100"></td>
                         <td class="p-2">{{ $m->name }}</td>
                         <td class="p-2">{{ $m->description }}</td>
                         <td class="p-2">{{ $m->category }}</td>

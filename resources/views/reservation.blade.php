@@ -3,7 +3,7 @@
 
 <div class="flex flex-col gap-4">
     <div class="container h-[calc(100dvh-4rem)] w-screen p-8 pt-0">
-        <x-hero.hero title="Reservation" image="{{ asset('images/food-1.webp')}}"></x-hero>
+        <x-hero.hero title="Reservation" image="{{ asset('image.webp')}}"></x-hero>
     </div>
 
     <div class="container px-8">

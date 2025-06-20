@@ -16,6 +16,12 @@ class ReservationController extends Controller
         return view('reservation');
     }
 
+    public function show_admin()
+    {
+        $reservations = Reservation::all();
+        return view('admin.list_reservation', compact('reservations'));
+    }
+
     public function create(Request $req)
     {
         $reservation = new Reservation;

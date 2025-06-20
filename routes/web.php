@@ -29,6 +29,8 @@ Route::get('/admin',[MenuController::class,'index'])->name('admin');
 //post makanan
 route::get('/create_menu',[MenuController::class,'create'])->name('admin.menus.create');
 Route::post('/post_menu', [MenuController::class,'store'])->name('post_menu');
+route::get('/edit_menu/{id}',[MenuController::class,'edit'])->name('edit_menu');
+route::post('/update_menu/{id}',[MenuController::class,'update'])->name('update_menu');
 
 
 // ->middleware(['role' => 'admin'])

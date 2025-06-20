@@ -27,8 +27,8 @@
                 <td>{{ $m->price }}</td>
                 <td>
                     {{-- Hrefnya nanti jan lupa diganti okay --}}
-                    <a class="btn btn-info btn-sm" href="view details">View</a>
-                    <a class="btn btn-primary btn-sm" href="delete">Edit</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('edit_menu', $m->id) }}">View</a>
+                    <a class="btn btn-primary btn-sm" href="">Edit</a>
                     <form action="delete" method="POST" style="display:inline;">
                         @csrf @method('DELETE')
                         <button class="btn btn-danger btn-sm">Delete</button>

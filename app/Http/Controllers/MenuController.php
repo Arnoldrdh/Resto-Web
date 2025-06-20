@@ -8,9 +8,15 @@ use Illuminate\Http\Request;
 class MenuController extends Controller
 {
     public function index(){
-        return view('products.index');
+        $menus = menu::all();
+        return view('admin.index', compact('menus'));
     }
 
+    
+    public function create() {
+        return view('admin.create');
+    }
+    
     public function store(Request $request)
     {
         $request -> validate([
@@ -30,8 +36,8 @@ class MenuController extends Controller
         $product->category = $request->category;
         $product->image = 'images/'.$imageName;
         $product->save();
-        return redirect('/show');
-    }
+        return redirect('/index');
+    }   
 
     public function show()
     {

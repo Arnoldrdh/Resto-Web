@@ -38,10 +38,6 @@
                         <td class="p-2">{{ $m->category }}</td>
                         <td class="p-2">{{ $m->price }}</td>
                         <td class="p-2">
-                            {{-- Hrefnya nanti jan lupa diganti okay --}}
-                            <a href="">
-                                <button class="border-4 py-1 hover:bg-accent/20">View</button>
-                            </a>
                             <a href="{{ route('admin.menus.edit', $m->id)}}">
                                 <button class="border-4 py-1 hover:bg-accent/20">Edit</button>
                             </a>

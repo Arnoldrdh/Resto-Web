@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function index(){
-        $menus = menu::all();
-        return view('admin.index', compact('menus'));
+    public function adminshow(){
+        $menus = Menu::all();
+
+        return view('admin.list_makanan', compact('menus'));
     }
 
-    
-    public function create() {
-        return view('admin.create');
+    public function createShow() {
+        return view('admin.create-menus');
     }
     
     public function store(Request $request)
@@ -36,7 +36,7 @@ class MenuController extends Controller
         $product->category = $request->category;
         $product->image = 'images/'.$imageName;
         $product->save();
-        return redirect('/index');
+        return redirect('/admin/menus');
     }   
 
     public function show()

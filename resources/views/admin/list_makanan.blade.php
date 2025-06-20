@@ -42,8 +42,8 @@
                             <a href="">
                                 <button class="border-4 py-1 hover:bg-accent/20">View</button>
                             </a>
-                            <a href="">
-                            <button class="border-4 py-1 hover:bg-accent/20">Edit</button>
+                            <a href="{{ route('admin.menus.edit', $m->id)}}">
+                                <button class="border-4 py-1 hover:bg-accent/20">Edit</button>
                             </a>
                             <form action="delete" method="POST" style="display:inline;">
                                 @csrf @method('DELETE')

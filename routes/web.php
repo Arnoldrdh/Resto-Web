@@ -27,4 +27,9 @@ Route::middleware(['role'])->group(function() {
     Route::get('/admin/menus', [MenuController::class, 'adminShow'])->name('admin.menus');
     Route::get('/admin/menus/create', [MenuController::class, 'createShow'])->name('admin.menus.create');
     Route::post('/admin/menus', [MenuController::class, 'store']);
+    route::get('/admin/menus/edit/{id}',[MenuController::class,'edit'])->name('admin.menus.edit');
 });
+route::post('/update_menu/{id}',[MenuController::class,'update'])->name('admin.menus.update');
+
+
+// ->middleware(['role' => 'admin'])

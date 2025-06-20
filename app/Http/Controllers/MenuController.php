@@ -39,6 +39,31 @@ class MenuController extends Controller
         return redirect('/admin/menus');
     }   
 
+
+    public function edit($id){
+        $menu =  menu::findOrFail($id);
+        return view('admin.edit-menus' ,compact('menu'));
+    }
+
+    public function update(Request $request, $id){
+        $request -> validate([
+            'name' => 'required',
+            'description' => 'required|max:150',
+            'price' => 'required|min:1',
+
+ 
+        ]);
+        $product =  menu::findOrFail($id);
+
+        $product->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+
+        ]);
+
+        return redirect()->route('products.index')->with('success','Product updated.');
+    }
     public function show()
     {
         $food = Menu::where('category', 'food')->get();
